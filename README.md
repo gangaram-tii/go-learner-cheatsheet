@@ -3,7 +3,7 @@
 
 ## My first Go program:
 
-```
+```go
 package main
 import ("fmt")
 
@@ -28,12 +28,12 @@ Go follows C++ style comments.
 ### Declaration:
 #### Use 'var' keyword:
 
-```
+```go
 var variablename type = value
 ```
 Example:
 
-```
+```go
 var a string
 var b int
 var c bool
@@ -41,13 +41,13 @@ var c bool
 #### Using `:=` sign:
 The type of the variable is inferred from the value.
 
-```
+```go
 i_m_int := 2 //Compiler infers type as integer, var keyword is not used
 var i_am_str = "Hello" //Compiler infers type as string, var keyword is used
 ```
 These declarations are also OK:
 
-```
+```go
 var a, b, c, d int = 1, 3, 5, 7
 var d, e = 6, "Hello"
 f, g := 7, "World!"
@@ -80,7 +80,7 @@ Variable declaration and value assignment can be done separately | Variable decl
 Not possible to change the value.
 Example:
 
-```
+```go
 const I_M_CONST_INT int = 1
 const I_M_ANOTHER_CONST_INT = 1
 //Can be grouped in a block for readability
@@ -156,7 +156,7 @@ Formatting:
 ## Arrays:
 Indexing: starts with 0
 
-```
+```go
 var array_name = [length]datatype{values} // here length is defined
 var array_name = [...]datatype{values} // here length is inferred
 array_name := [length]datatype{values} // here length is defined
@@ -164,7 +164,8 @@ array_name := [...]datatype{values} // here length is inferred
 ```
 
 Example:
-```
+
+```go
 var arr1 = [3]int{1,2,3}
 arr2 := [5]int{4,5,6,7,8}
 var arr3 = [...]int{1,2,3}
@@ -184,14 +185,14 @@ Slices are similar to arrays, but are more powerful and flexible. Unlike arrays,
     
 Syntax:
 
-```
+```go
 slice_name := []datatype{values}
 myslice := []int{}
 ```
 
 Example1:
 
-```
+```go
 package main
 
 import "fmt"
@@ -212,7 +213,7 @@ func main() {
 In this example, len(slice) returns 3 because the slice has 3 elements, and cap(slice) returns 5 because the slice has a capacity of 5.
 
 Example2:
-```
+```go
 package main
 import ("fmt")
 
@@ -235,7 +236,7 @@ If myslice started from element 0, the slice capacity would be 6.
 
 In Go, a slice doesn't have a fixed capacity; it can dynamically grow as elements are added to it. However, you can specify a capacity when creating a slice using the make function. The capacity specifies the size of the underlying array that the slice can expand into before it needs to allocate more memory. Here's an example:
 
-```
+```go
 slice := make([]int, 0, 10) // Creates a slice with length 0 and capacity 10
 ```
 
