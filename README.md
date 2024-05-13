@@ -170,6 +170,48 @@ arr2 := [5]int{4,5,6,7,8}
 var arr3 = [...]int{1,2,3}
 arr4 := [...]int{4,5,6,7,8}
 var cars = [4]string{"Volvo", "BMW", "Ford", "Mazda"}
-/* Attention */
-arr1 := [5]int{1:10,2:40} // Initializes only value at index 1 and 2
+/* ATTENTION */
+arr5 := [5]int{1:10,2:40} // Initializes only value at index 1 and 2
+x := len(arr5) // Length of array
 ```
+
+## Slice
+Slices are similar to arrays, but are more powerful and flexible. Unlike arrays, the length of a slice can grow and shrink.
+
+- **Length (len)**: It represents the number of elements contained in the slice. It can be obtained using the built-in len() function.
+
+- **Capacity (cap)**: It represents the maximum number of elements that the slice can hold without allocating more memory. It can be obtained using the built-in cap() function.
+    
+Syntax:
+
+```
+slice_name := []datatype{values}
+myslice := []int{}
+```
+
+Example:
+
+```
+package main
+
+import "fmt"
+
+func main() {
+    // Creating a slice with length 3 and capacity 5
+    slice := make([]int, 3, 5)
+
+    fmt.Println("Length of slice:", len(slice))     // Output: Length of slice: 3
+    fmt.Println("Capacity of slice:", cap(slice))   // Output: Capacity of slice: 5
+}
+
+```
+
+In this example, len(slice) returns 3 because the slice has 3 elements, and cap(slice) returns 5 because the slice has a capacity of 5.
+
+In Go, a slice doesn't have a fixed capacity; it can dynamically grow as elements are added to it. However, you can specify a capacity when creating a slice using the make function. The capacity specifies the size of the underlying array that the slice can expand into before it needs to allocate more memory. Here's an example:
+
+```
+slice := make([]int, 0, 10) // Creates a slice with length 0 and capacity 10
+```
+
+In this example, the slice has a length of 0 (no elements) and a capacity of 10. As you append elements to the slice, it can grow up to the specified capacity before it needs to reallocate memory. If you exceed the capacity, Go automatically doubles the capacity to accommodate more elements efficiently.
