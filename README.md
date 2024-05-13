@@ -45,3 +45,51 @@ The type of the variable is inferred from the value.
 i_m_int := 2 //Compiler infers type as integer, var keyword is not used
 var i_am_str = "Hello" //Compiler infers type as string, var keyword is used
 ```
+These declarations are also OK:
+
+```
+var a, b, c, d int = 1, 3, 5, 7
+var d, e = 6, "Hello"
+f, g := 7, "World!"
+var (
+     h int
+     i int = 1
+     j string = "hello"
+   )
+```
+
+A variable name:
+- must start with a letter or an underscore character (_)
+- cannot start with a digit
+- can only contain alpha-numeric characters and underscores (a-z, A-Z, 0-9, and _ )
+- is case-sensitive (age, Age and AGE are three different variables).
+- cannot contain spaces
+- cannot be any Go keywords
+    
+Also:
+- There is no limit on the length of the variable name
+
+
+
+ var  |	:=
+ --- | ---
+Can be used inside and outside of functions |	Can only be used inside functions
+Variable declaration and value assignment can be done separately | Variable declaration and value assignment cannot be done separately (must be done in the same line)
+
+### Constant:
+Not possible to change the value.
+Example:
+
+```
+const I_M_CONST_INT int = 1
+const I_M_ANOTHER_CONST_INT = 1
+//Can be grouped in a block for readability
+const (
+  A int = 1
+  B = 3.14
+  C = "Hi!"
+)
+```
+
+
+
