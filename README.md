@@ -18,8 +18,30 @@ In Go, statements are separated by ending a line or by a semicolon ";". The left
 Go follows C++ style comments.
 
  ## Variables:
+
  
 - **int** - stores integers (whole numbers), such as 123 or -123
 - **float32** - stores floating point numbers, with decimals, such as 19.99 or -19.99
 - **string** - stores text, such as "Hello World". String values are surrounded by double quotes
 - **bool** - stores values with two states: true or false
+
+### Declaration:
+#### Use 'var' keyword:
+
+```
+var variablename type = value
+```
+Example:
+
+```
+var a string
+var b int
+var c bool
+```
+#### Using `:=` sign:
+The type of the variable is inferred from the value.
+
+```
+i_m_int := 2 //Compiler infers type as integer, var keyword is not used
+var i_am_str = "Hello" //Compiler infers type as string, var keyword is used
+```
