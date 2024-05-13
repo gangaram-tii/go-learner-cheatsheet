@@ -105,15 +105,43 @@ The `Printf()` function first formats its argument based on the given format spe
 
 - `%v`: is used to print the value of the arguments
 - `%T`: is used to print the type of the arguments
+- 
+Integers:
 - `%d`: Base 10 integer.
-- `%b`: Binary representation.
+- `%4d`: Pad with spaces (width 4, right justified)
+- `%-4d`: Pad with spaces (width 4, left justified)
+- `%04d`:	Pad with zeroes (width 4
 - `%x`: Hexadecimal representation, with lower-case letters for a-f.
 - `%X`: Hexadecimal representation, with upper-case letters for A-F.
+- `%#x`: Hexadecimal representation, with leading 0x
+- `%b`: Binary representation.
+- `%t`: Value of the boolean operator in true or false format (same as using %v)
+- 
+Floats:
 - `%f`: Decimal floating-point.
 - `%e, %E`: Scientific notation, with 'e' or 'E' replacing the decimal point.
+- `%.2f`: Default width, precision 2
+- `%6.2f`: Width 6, precision 2
+- `%g`:	Exponent as needed, only necessary digits
+
+Strings:
 - `%s`: The default format for strings.
+- `%q`: Prints the value as a double-quoted string
+- `%8s`: Prints the value as plain string (width 8, right justified)
+- `%-8s`: Prints the value as plain string (width 8, left justified)
+- `%x`: Prints the value as hex dump of byte values
+- `% x`: Prints the value as hex dump with spaces
+
+Pointers:
 - `%p`: Pointer representation.
 
-
+### More Integers:
+Type | Size 
+--- | --- 
+int/uint  | Depends on platform (32 bits in 32 bit systems and 64 bit in 64 bit systems)
+int8/uint8 | 8 bits/1 byte
+int16/uint16 | 16 bits/2 byte
+int32/uint32 | 32 bits/4 byte
+int64/uint64 | 64 bits/8 byte
 
 
