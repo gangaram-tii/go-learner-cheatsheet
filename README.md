@@ -153,6 +153,23 @@ Formatting:
 ### Pointers:
 - `%p`: Pointer representation.
 
+## Arrays:
+Indexing: starts with 0
 
+```
+var array_name = [length]datatype{values} // here length is defined
+var array_name = [...]datatype{values} // here length is inferred
+array_name := [length]datatype{values} // here length is defined
+array_name := [...]datatype{values} // here length is inferred 
+```
 
-
+Example:
+```
+var arr1 = [3]int{1,2,3}
+arr2 := [5]int{4,5,6,7,8}
+var arr3 = [...]int{1,2,3}
+arr4 := [...]int{4,5,6,7,8}
+var cars = [4]string{"Volvo", "BMW", "Ford", "Mazda"}
+/* Attention */
+arr1 := [5]int{1:10,2:40} // Initializes only value at index 1 and 2
+```
