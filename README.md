@@ -91,5 +91,29 @@ const (
 )
 ```
 
+### Printing on output console
+
+Part of `fmt` package:
+
+- Println() 
+- Print()
+- Printf()
+
+`Println()` function is similar to `Print()` with the difference that a whitespace is added between the arguments, and a newline is added at the end.
+
+The `Printf()` function first formats its argument based on the given format specifier and then prints them.
+
+- `%v`: is used to print the value of the arguments
+- `%T`: is used to print the type of the arguments
+- `%d`: Base 10 integer.
+- `%b`: Binary representation.
+- `%x`: Hexadecimal representation, with lower-case letters for a-f.
+- `%X`: Hexadecimal representation, with upper-case letters for A-F.
+- `%f`: Decimal floating-point.
+- `%e, %E`: Scientific notation, with 'e' or 'E' replacing the decimal point.
+- `%s`: The default format for strings.
+- `%p`: Pointer representation.
+
+
 
 
