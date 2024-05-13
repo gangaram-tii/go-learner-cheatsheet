@@ -105,8 +105,17 @@ The `Printf()` function first formats its argument based on the given format spe
 
 - `%v`: is used to print the value of the arguments
 - `%T`: is used to print the type of the arguments
-- 
-Integers:
+
+### More on Integers:
+Type | Size 
+--- | --- 
+int/uint  | Depends on platform (32 bits in 32 bit systems and 64 bit in 64 bit systems)
+int8/uint8 | 8 bits/1 byte
+int16/uint16 | 16 bits/2 byte
+int32/uint32 | 32 bits/4 byte
+int64/uint64 | 64 bits/8 byte
+
+Formatting:
 - `%d`: Base 10 integer.
 - `%4d`: Pad with spaces (width 4, right justified)
 - `%-4d`: Pad with spaces (width 4, left justified)
@@ -116,15 +125,24 @@ Integers:
 - `%#x`: Hexadecimal representation, with leading 0x
 - `%b`: Binary representation.
 - `%t`: Value of the boolean operator in true or false format (same as using %v)
-- 
-Floats:
+  
+### More on Floats:
+Follows the IEEE 754 standard:
+
+Type | Size 
+--- | ---
+float32 |	32 bits, Single precision,(s=1,e=8,m=23)
+float64 |	64 bits, Double precision, (s=1,e=11,m52)
+
+Formatting:
 - `%f`: Decimal floating-point.
 - `%e, %E`: Scientific notation, with 'e' or 'E' replacing the decimal point.
 - `%.2f`: Default width, precision 2
 - `%6.2f`: Width 6, precision 2
 - `%g`:	Exponent as needed, only necessary digits
 
-Strings:
+### Strings:
+Formatting:
 - `%s`: The default format for strings.
 - `%q`: Prints the value as a double-quoted string
 - `%8s`: Prints the value as plain string (width 8, right justified)
@@ -132,16 +150,9 @@ Strings:
 - `%x`: Prints the value as hex dump of byte values
 - `% x`: Prints the value as hex dump with spaces
 
-Pointers:
+### Pointers:
 - `%p`: Pointer representation.
 
-### More Integers:
-Type | Size 
---- | --- 
-int/uint  | Depends on platform (32 bits in 32 bit systems and 64 bit in 64 bit systems)
-int8/uint8 | 8 bits/1 byte
-int16/uint16 | 16 bits/2 byte
-int32/uint32 | 32 bits/4 byte
-int64/uint64 | 64 bits/8 byte
+
 
 
