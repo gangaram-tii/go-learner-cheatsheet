@@ -189,7 +189,7 @@ slice_name := []datatype{values}
 myslice := []int{}
 ```
 
-Example:
+Example1:
 
 ```
 package main
@@ -200,13 +200,38 @@ func main() {
     // Creating a slice with length 3 and capacity 5
     slice := make([]int, 3, 5)
 
+    // Creating a slice from an Array
+    arr1 := [6]int{10, 11, 12, 13, 14,15}
+    slice1 := arr1[2:4]
+
     fmt.Println("Length of slice:", len(slice))     // Output: Length of slice: 3
     fmt.Println("Capacity of slice:", cap(slice))   // Output: Capacity of slice: 5
 }
-
 ```
 
 In this example, len(slice) returns 3 because the slice has 3 elements, and cap(slice) returns 5 because the slice has a capacity of 5.
+
+Example2:
+```
+package main
+import ("fmt")
+
+func main() {
+  arr1 := [6]int{10, 11, 12, 13, 14,15}
+  myslice := arr1[2:4]
+
+  fmt.Printf("myslice = %v\n", myslice)
+  fmt.Printf("length = %d\n", len(myslice))
+  fmt.Printf("capacity = %d\n", cap(myslice))
+}
+```
+
+In the example above myslice is a slice with length 2. It is made from arr1 which is an array with length 6.
+
+The slice starts from the third element of the array which has value 12 (remember that array indexes start at 0. That means that [0] is the first element, [1] is the second element, etc.). The slice can grow to the end of the array. This means that the capacity of the slice is 4.
+
+If myslice started from element 0, the slice capacity would be 6.
+
 
 In Go, a slice doesn't have a fixed capacity; it can dynamically grow as elements are added to it. However, you can specify a capacity when creating a slice using the make function. The capacity specifies the size of the underlying array that the slice can expand into before it needs to allocate more memory. Here's an example:
 
