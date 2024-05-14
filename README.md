@@ -264,3 +264,44 @@ mySlice2 := []int{11,21,31}
 mySlice3 = append(mySlice, mySlice2...)
 
 ```
+### Slice memory footprint
+ When using slices, Go loads all the underlying elements into the memory. If the array is large and you need only a few elements, it is better to copy those elements using the copy() function.
+
+The *copy()* function creates a new underlying array with only the required elements for the slice. This will reduce the memory used for the program. The copy() function takes in two slices dest and src, and copies data from src to dest. It returns the number of elements copied.
+
+```go
+copy(dest, src)
+```
+Example:
+
+```go
+numbers := []int{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}
+// Create copy with only needed numbers
+neededNumbers := numbers[:len(numbers)-10]
+numbersCopy := make([]int, len(neededNumbers))
+copy(numbersCopy, neededNumbers)
+```
+
+### Operators
+Similar to 'C'.
+
+### Conditional statements
+Similar to 'C', `()` not mandatory after `if`.
+
+Example:
+
+```go
+package main
+import ("fmt")
+
+func main() {
+  time := 22
+  if (time < 10) {
+    fmt.Println("Good morning.")
+  } else if time < 20 {
+    fmt.Println("Good day.")
+  } else {
+    fmt.Println("Good evening.")
+  }
+}
+```
