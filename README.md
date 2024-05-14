@@ -286,6 +286,8 @@ copy(numbersCopy, neededNumbers)
 Similar to 'C'.
 
 ### Conditional statements
+
+#### if-else
 Similar to 'C', `()` not mandatory after `if`.
 
 Example:
@@ -305,3 +307,59 @@ func main() {
   }
 }
 ```
+
+#### switch
+##### Single case switch:
+Same as 'C' switch.
+
+##### Multi case switch:
+More can specify more than one case for same evaluation:
+
+```go
+switch x {
+case 1,3,5:
+  fmt.Println("Hi")
+case 2,4:
+  fmt.Println("Hello")
+case 6:
+  fmt.Println("Bye")
+default:
+  fmt.Println("Good Bye!")
+}
+```
+
+### Loop
+C++ style with traditional `continue` and `break` but without `()`.
+
+```go
+for i:=0; i < 5; i++ {
+    fmt.Println(i)
+  }
+```
+Python style iteration too using `range` keyword.
+Syntax:
+
+```go
+for index, value := array|slice|map {
+   // code to be executed for each iteration
+}
+```
+Example:
+
+```go
+fruits := [3]string{"apple", "orange", "banana"}
+for _, val := range fruits {
+   fmt.Printf("%v\n", val)
+}
+```
+
+### Functions
+Syntax:
+
+```go
+func FunctionName(param1 type, param2 type) type {
+  // code to be executed
+  return output
+} 
+```
+
