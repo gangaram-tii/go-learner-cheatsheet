@@ -176,7 +176,7 @@ arr5 := [5]int{1:10,2:40} // Initializes only value at index 1 and 2
 x := len(arr5) // Length of array
 ```
 
-## Slice
+## Slices
 Slices are similar to arrays, but are more powerful and flexible. Unlike arrays, the length of a slice can grow and shrink.
 
 - **Length (len)**: It represents the number of elements contained in the slice. It can be obtained using the built-in len() function.
@@ -224,6 +224,10 @@ func main() {
   fmt.Printf("myslice = %v\n", myslice)
   fmt.Printf("length = %d\n", len(myslice))
   fmt.Printf("capacity = %d\n", cap(myslice))
+
+  myslice2 := []int{10, 11, 12, 13, 14}
+  fmt.Printf("length = %d\n", len(myslice2))
+  fmt.Printf("capacity = %d\n", cap(myslice2))
 }
 ```
 
@@ -233,6 +237,8 @@ The slice starts from the third element of the array which has value 12 (remembe
 
 If myslice started from element 0, the slice capacity would be 6.
 
+In Go, when you create a slice using a composite literal, the capacity of the slice is set to the same value as its length. myslice2 has length and capacity 5.
+
 
 In Go, a slice doesn't have a fixed capacity; it can dynamically grow as elements are added to it. However, you can specify a capacity when creating a slice using the make function. The capacity specifies the size of the underlying array that the slice can expand into before it needs to allocate more memory. Here's an example:
 
@@ -241,3 +247,20 @@ slice := make([]int, 0, 10) // Creates a slice with length 0 and capacity 10
 ```
 
 In this example, the slice has a length of 0 (no elements) and a capacity of 10. As you append elements to the slice, it can grow up to the specified capacity before it needs to reallocate memory. If you exceed the capacity, Go automatically doubles the capacity to accommodate more elements efficiently.
+
+### Slice Operations:
+By example:
+
+```go
+mySlice := []int{10,20,30}
+/* Change Value */
+mySlice[2] = 50
+/* Append 60,70,80 to the slice */
+mySlice = append(mySlice, 60, 70, 80)
+
+/* Append a slice */
+mySlice2 := []int{11,21,31}
+/* Here we use the ... syntax to unpack the elements of slice2 into the append() function call */
+mySlice3 = append(mySlice, mySlice2...)
+
+```
